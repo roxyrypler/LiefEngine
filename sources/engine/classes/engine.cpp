@@ -1,8 +1,6 @@
 #include "engine.h"
 // Project
-#include "entry.h"
-
-Entry _entry;
+Texture2D texture;
 /* saving snippet for later, for creating callbacks
 void fun() {
     std::cout << "Halla balla" << std::endl;
@@ -21,17 +19,15 @@ execution: //ja(fun);
 void Engine::Start() {
     InitWindow(windowWidth, windowHeight, "TestGame mon");
     SetTargetFPS(120);
-
-    _entry.Start();
+    texture = LoadTexture("resources/raylib_logo.png");
 };
 
 void Engine::Update() {
-    _entry.Update();
 };
 
 void Engine::Draw() {
     DrawFPS(windowWidth - 100, 50);
-    _entry.Draw();
+    DrawTexture(texture, 100, 100, WHITE);
 };
 
 int Engine::GetWinWidth() {
