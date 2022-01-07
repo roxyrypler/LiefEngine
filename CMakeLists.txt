@@ -13,12 +13,10 @@ FetchContent_MakeAvailable(raylib)
 file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/sources/*.cpp") # Define PROJECT_SOURCES as a list of all source files
 set(PROJECT_INCLUDE "${CMAKE_CURRENT_LIST_DIR}/sources/") # Define PROJECT_INCLUDE to be the path to the include directory of the project
 set(PROJECT_INCLUDE 
-    "${CMAKE_CURRENT_LIST_DIR}/sources/runtime/classes/"
-    "${CMAKE_CURRENT_LIST_DIR}/sources/engine/classes/"
-    #Project depenedcies
-        #DevGame
-    "${CMAKE_CURRENT_LIST_DIR}/sources/Projects/DevGame"
-    "${CMAKE_CURRENT_LIST_DIR}/sources/Projects/DevGame/files"
+    "${CMAKE_CURRENT_LIST_DIR}/sources/engine/classes/private"
+    "${CMAKE_CURRENT_LIST_DIR}/sources/engine/classes/public"
+    "${CMAKE_CURRENT_LIST_DIR}/sources/runtime/classes/private"
+    "${CMAKE_CURRENT_LIST_DIR}/sources/runtime/classes/public"
 ) # Define PROJECT_INCLUDE to be the path to the include directory of the project
 
 # Declaring our executable
