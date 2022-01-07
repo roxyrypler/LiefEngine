@@ -19,7 +19,7 @@ execution: //ja(fun);
 void Engine::Start() {
     InitWindow(windowWidth, windowHeight, "TestGame mon");
     SetTargetFPS(120);
-    texture = LoadTexture("resources/raylib_logo.png");
+    texture = LoadTexture("../sources/resources/raylib_logo.png");
 };
 
 void Engine::Update() {
