@@ -1,8 +1,11 @@
-
+#include <iostream>
+#include <vector>
 
 class AssetLoader {
-    private:
-        
+    private: 
+        std::vector<std::string> AssetPathsArr;
     public:
+
+    void AddAsset();
         
 };
