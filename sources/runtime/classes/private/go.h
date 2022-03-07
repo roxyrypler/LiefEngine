@@ -1,3 +1,6 @@
+#ifndef GO_H
+#define GO_H
+
 #include "raylib.h"
 
 class GO {
@@ -26,3 +29,5 @@ public:
     float GetMoveSpeed();
     Rectangle GetPlayerRect();
 };
+
+#endif // GO_H

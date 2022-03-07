@@ -1,6 +1,7 @@
 #include "engine.h"
 #include <vector>
 #include <iostream>
+#include <string>
 // Project
 //Texture2D texture;
 /* saving snippet for later, for creating callbacks
@@ -20,9 +21,14 @@ execution: //ja(fun);
 
 
 void Engine::Start() {
-    InitWindow(windowWidth, windowHeight, "TestGame mon");
+    InitWindow(windowWidth, windowHeight, "IdlerGame");
     SetTargetFPS(120);
-    //texture = LoadTexture("../sources/resources/raylib_logo.png");
+
+    AssetLoader.AddAsset("testIcon", "./assets/icon.png");
+    std::cout << AssetLoader.GetAsset("testIcon");
+    //AssetLoader.GetAssetList();
+    AssetLoader.LoadAllAssets();
+    //texture = LoadTexture("./assets/icon.png");
 };
 
 void Engine::Update() {
@@ -30,7 +36,7 @@ void Engine::Update() {
 
 void Engine::Draw() {
     DrawFPS(windowWidth - 100, 50);
-    //DrawTexture(texture, 100, 100, WHITE);
+    DrawTexture(AssetLoader.GetLoadedAsset("testIcon"), 100, 100, WHITE);
 };
 
 int Engine::GetWinWidth() {
