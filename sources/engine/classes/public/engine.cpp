@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 // Project
-//Texture2D texture;
 /* saving snippet for later, for creating callbacks
 void fun() {
     std::cout << "Halla balla" << std::endl;
@@ -23,12 +22,7 @@ execution: //ja(fun);
 void Engine::Start() {
     InitWindow(windowWidth, windowHeight, "IdlerGame");
     SetTargetFPS(120);
-
-    AssetLoader.AddAsset("testIcon", "./assets/icon.png");
-    std::cout << AssetLoader.GetAsset("testIcon");
-    //AssetLoader.GetAssetList();
-    AssetLoader.LoadAllAssets();
-    //texture = LoadTexture("./assets/icon.png");
+    assetRegistry.InitAssetLoad();
 };
 
 void Engine::Update() {
@@ -36,7 +30,7 @@ void Engine::Update() {
 
 void Engine::Draw() {
     DrawFPS(windowWidth - 100, 50);
-    DrawTexture(AssetLoader.GetLoadedAsset("testIcon"), 100, 100, WHITE);
+    DrawTexture(assetRegistry.AssetLoader.GetLoadedAsset("testIcon"), 100, 100, WHITE);
 };
 
 int Engine::GetWinWidth() {

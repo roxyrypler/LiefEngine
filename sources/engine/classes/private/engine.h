@@ -1,13 +1,13 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 #include "raylib.h"
-#include "assetloader.h"
+#include "assetRegistry.h"
 
 class Engine {
     private:
+        AssetRegistry assetRegistry;
         int windowWidth;
         int windowHeight;
-        AssetLoader AssetLoader;
     public:
     Engine(int width, int height) {
         windowWidth = width;
